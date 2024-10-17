@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script> -->
+
+    <title>Pinak Intern</title>
+    <style>
+        .rotate-image {
+            /* transition: transform 1s ease-in-out; */
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .card:hover .rotate-image {
+            transform: rotate(360deg);
+        }
+
+
+        .diagonal-bg {
+            background: linear-gradient(155deg, #360051 50%, #efeeee 50%);
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+
+            padding-right: 1rem;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="assignment" class="diagonal-bg py-12 px-6 mt-10 mb-10 ml-10 mr-10">
+        <h1 class="text-white text-left text-6xl font-bold  ml-12 mb-8">OUR SERVICES</h1>
+        <div class="cards flex flex-wrap justify-center gap-16 mt-20">
+
+
+            <div class="card bg-white h-80 w-72 text-black p-6 rounded-lg shadow-lg relative">
+                <div class="icon-container absolute -top-8 left-1/2 transform -translate-x-1/2">
+                    <div
+                        class="bg-white p-4 rounded-full text-white flex justify-center items-center border-2 border-black">
+                        <img src="images/phoneicon.png" alt="Emergency Plumbing"
+                            class="h-12 w-12 object-cover rounded-full rotate-image">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-4 mt-10 text-center">Emergency Plumbing Services</h3>
+                <p class="text-base mb-4 text-center">Our plumbers are ready to go 24/7 for emergencies-including
+                    nights, weekends, and holidays.</p>
+                <a href="#" class="text-violet-950 font-bold hover:text-violet-700 block text-center">EXPLORE THIS
+                    SERVICE &gt;</a>
+            </div>
+
+
+            <div class="card bg-white h-80 w-72 text-black p-6 rounded-lg shadow-lg relative">
+                <div class="icon-container absolute -top-8 left-1/2 transform -translate-x-1/2">
+                    <div
+                        class="bg-white p-4 rounded-full text-white flex justify-center items-center border-2 border-black">
+                        <img src="images/pipeicon.png" alt="Plumbing and Drains"
+                            class="h-12 w-12 object-cover rounded-full rotate-image">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-4 mt-10 text-center">Plumbing and Drains</h3>
+                <p class="text-base mb-4 text-center">As the largest plumbing and drain service company, we make
+                    thousands of repairs every day.</p>
+                <a href="#" class="text-violet-950 font-bold hover:text-violet-700 block text-center">EXPLORE THIS
+                    SERVICE &gt;</a>
+            </div>
+
+
+            <div class="card bg-white h-80 w-72 text-black p-6 rounded-lg shadow-lg relative">
+                <div class="icon-container absolute -top-8 left-1/2 transform -translate-x-1/2">
+                    <div
+                        class="bg-white p-4 rounded-full text-white flex justify-center items-center border-2 border-black">
+                        <img src="images/watericon.jpg" alt="Water Damage"
+                            class="h-12 w-12 object-cover rounded-full rotate-image">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-4 mt-10 text-center">Water Damage</h3>
+                <p class="text-base mb-4 text-center">Our teams are equipped with state-of-the-art water extraction and
+                    cleanup equipment.</p>
+                <a href="#" class="text-violet-950 font-bold hover:text-violet-700 block text-center">EXPLORE THIS
+                    SERVICE &gt;</a>
+            </div>
+
+
+            <div class="card bg-white h-80 w-72 text-black p-6 rounded-lg shadow-lg relative">
+                <div class="icon-container absolute -top-8 left-1/2 transform -translate-x-1/2">
+                    <div
+                        class="bg-white p-4 rounded-full text-white flex justify-center items-center border-2 border-black">
+                        <img src="images/heatericon.png" alt="Water Heaters"
+                            class="h-12 w-12 object-cover rounded-full rotate-image">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-4 mt-10 text-center">Water Heaters</h3>
+                <p class="text-base mb-4 text-center">Trust Roto-Rooter for repair and replacement of gas, electric, and
+                    tankless water heaters.</p>
+                <a href="#" class="text-violet-950 font-bold hover:text-violet-700 block text-center">EXPLORE THIS
+                    SERVICE &gt;</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Selecting all elements with the class 'rotate-image'
+            const images = document.querySelectorAll('.rotate-image');
+
+            // Initialize rotation to 0
+            images.forEach(image => {
+                gsap.set(image, { rotation: 0 });
+
+                // Apply hover effect to each image
+                image.addEventListener('mouseenter', () => {
+                    gsap.to(image, { rotation: 360, duration: 0.2, ease: "power2.inOut" }); // Very fast rotation
+                });
+
+                // On mouse leave, reset the rotation to 0
+                image.addEventListener('mouseleave', () => {
+                    gsap.to(image, { rotation: 0, duration: 0.2, ease: "power2.inOut" }); // Very fast reset
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
